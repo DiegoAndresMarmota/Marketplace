@@ -1,7 +1,27 @@
 import { Box, Button, Container, Grid, Paper, TextField, Typography } from "@mui/material";
 import React from "react";
 
+type LoginType = {
+    username: string;
+    password: string;
+}
+
 export const LoginPage: React.FC<{}> = () => {
+
+    const [loginData, setLoginData] = React.useState<LoginType>({
+        username: "",
+        password: "",
+    });
+
+    const dataLogin = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setLoginData({...loginData, [e.target.name]: e.target.value });
+    }
+
+    const handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
+        e.preventDefault();
+        console.log(loginData);
+    }
+
     return (
         <Container maxWidth="sm">
             <Grid
@@ -19,19 +39,26 @@ export const LoginPage: React.FC<{}> = () => {
                         >
                             Formulario
                         </Typography>
-                        <Box component="form">
+                        <Box component="form" onSubmit={handleSubmit}>
                             <TextField
+                                name="username"
                                 margin="normal"
                                 fullWidth
-                                label="email" sx={{ mt: 2, mb: 1.5 }}
+                                label="Email"
+                                sx={{ mt: 2, mb: 1.5 }}
+                                type="text"
                                 required
+                                onChange={dataLogin}
                             />
                             <TextField
                                 margin="normal"
+                                name="password"
                                 fullWidth
-                                label="password"
+                                label="Password"
                                 sx={{ mt: 1.5, mb: 1.5 }}
+                                type="password"
                                 required
+                                onChange={dataLogin}
                             />
                             <Button
                                 fullWidth
