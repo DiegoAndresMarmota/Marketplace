@@ -1,6 +1,6 @@
 import { Box, Button, Container, Grid, Paper, TextField, Typography } from "@mui/material";
 import React from "react";
-import { useNotification } from "../../context/notifications.context";
+import { useNotification } from "../../context/notification.context";
 import { LoginValidate } from "../../utils/validateForm";
 
 type LoginType = {
