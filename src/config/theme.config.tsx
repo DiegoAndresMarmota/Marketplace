@@ -10,7 +10,9 @@ export enum ThemePalette {
     PRIMARY = "#C8FA5F",
     FONT_GLOBAL = "'Montserrat', sans-serif",
     ERROR_MAIN = "#f44336",
-    BG_ERROR_MAIN = "rgba(244, 67, 54, 0.1)"
+    BG_ERROR_MAIN = "rgba(244, 67, 54, 0.1)",
+    SUCCESS_MAIN = "66bb6a",
+    BG_SUCCESS_MAIN = "rgba(102, 187, 106, 0.1)",
 };
 
 const theme = createTheme({
@@ -48,10 +50,14 @@ const theme = createTheme({
                     border: `1px solid ${ThemePalette.ERROR_MAIN}`,
                     backgroundColor: ThemePalette.BG_ERROR_MAIN,
                 },
+                standardSuccess: {
+                    border: `1px solid ${ThemePalette.SUCCESS_MAIN}`,
+                    backgroundColor: ThemePalette.BG_SUCCESS_MAIN,
+                },
             },
         },
-    }
-})
+    },
+});
 
 export const ThemeConfig: React.FC<ThemeProp> = ({children}) => {
     return (
