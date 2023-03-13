@@ -54,6 +54,6 @@ export const NotificationProvider: React.FC<{ children: JSX.Element }> = (
 
 export const useNotification = () => {
     const context = React.useContext(NotificationContext);
-    if (!context) throw new Error("###")
+    if (!context) throw new Error("No existe contexto")
     return context;
 };
