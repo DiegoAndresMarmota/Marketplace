@@ -3,13 +3,6 @@ import React from "react";
 
 export const HomePage: React.FC<{}> = () => {
     return (
-        <Container sx={{ mt: 9 }} maxWidth="xl">
-            <Button
-                fullWidth
-                variant='contained'
-            >
-                Hola Home!
-            </Button>
-        </Container>
-    )
-}
+        <Container sx={{ mt: 9 }} maxWidth="xl"></Container>
+    );
+};
