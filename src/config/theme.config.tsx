@@ -47,10 +47,11 @@ const theme = createTheme({
                 standardError: {
                     border: `1px solid ${ThemePalette.ERROR_MAIN}`,
                     backgroundColor: ThemePalette.BG_ERROR_MAIN,
+                },
             },
         },
-    },
-});
+    }
+})
 
 export const ThemeConfig: React.FC<ThemeProp> = ({children}) => {
     return (
